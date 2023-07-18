@@ -1,7 +1,6 @@
-const baseUrl = "https://accessibility.cubettech.in/js-plugin";
-//const baseUrl ="/js-plugin"
+const baseUrl = "https://cubility.cubettech.com/";
 
-
+// path in for default will is save from the outside  src="./../js/index.js"
 
 let colorAdjArr = [
   "getDarkContrastHTML",
@@ -44,7 +43,6 @@ let orientAdjArray = [
   "getAutoScrollHTML",
 ];
 
-
 function onLoadWindow(config) {
   var globeId = "cubet-plugin";
   var contrastLastClicked = "";
@@ -83,7 +81,7 @@ function onLoadWindow(config) {
     : "#36c0c2";
   let cubetMainIMg = config.image
     ? config.image
-    : `${baseUrl}/assets/images/cubet-access.png`;
+    : `${baseUrl}assets/images/cubet-access.png`;
   let positionCubet = config.position; // setting config
   var colorsArray = {
     1: "#0089d3",
@@ -185,8 +183,6 @@ function onLoadWindow(config) {
 
   // Create new link Element
 
-
-
   var makediv = document.createElement("div");
   makediv.id = globeId;
   makediv.style.position = "relative";
@@ -199,18 +195,18 @@ function onLoadWindow(config) {
 <div class="plugin-outer"  style="--cubet-background-color: ${cubetBodyColor};"id="pluginOuter">
 <div class="title-areas" style="margin-bottom:5%">
     <a  class="close-section" id="closeIcon">
-       <img id="cubet-image"src=${baseUrl}/assets/images/close.svg alt="Close" title="Close" width="17">
+       <img id="cubet-image"src=${baseUrl}assets/images/close.svg alt="Close" title="Close" width="17">
     </a>
     <a  class="close-icon" id="rightArrow">
-    <img id="cubet-image"src=${baseUrl}/assets/images/right.svg alt="Right" width="30">
+    <img id="cubet-image"src=${baseUrl}assets/images/right.svg alt="Right" width="30">
  </a>
     <a  class="close-icon" id="leftArrow">
-    <img id="cubet-image"src=${baseUrl}/assets/images/left.svg alt="Left" width="23">
+    <img id="cubet-image"src=${baseUrl}assets/images/left.svg alt="Left" width="23">
  </a>
     <h3>Cubility </h3>
     <h6 class="sub-title">The Accessibility Plugin
     <a  id="reset" class="btn btn-light bg-white text-primary px-4 reset-icons">
-    <img id="reset" src=${baseUrl}/assets/images/reset.svg alt="reset" title="Reset" width="13">
+    <img id="reset" src=${baseUrl}assets/images/reset.svg alt="reset" title="Reset" width="13">
  </a>
     </h6>
   
@@ -230,7 +226,7 @@ function onLoadWindow(config) {
 </div>
 <div class="content-adjust">
     <h6 class="fw-bold mb-2">Orientation Adjustments</h6>` +
-   ` <div class="row gx-3">` +
+    ` <div class="row gx-3">` +
     `${setOrientAdj()}` +
     `</div>
   </div>
@@ -1561,7 +1557,8 @@ function onLoadWindow(config) {
 
   /*.............start of highlights para................... */
   let highPara = document.getElementById("highlight-para");
-  highPara &&highPara.addEventListener("click", (event) => {
+  highPara &&
+    highPara.addEventListener("click", (event) => {
       paraHighlight = !paraHighlight;
       const object = {
         access_name: "highlight-para",
@@ -1602,23 +1599,24 @@ function onLoadWindow(config) {
 
   /*.............start of Paragraph Width................... */
   let paraWidthElm = document.getElementById("para-width");
-  
-  paraWidthElm&&paraWidthElm.addEventListener("click", (event) => {
-    paraWidth = !paraWidth;
-    const object = {
-      access_name: "para-width",
-      access_index: 0,
-      isEnable: paraWidth,
-      index: 11,
-      property: {
-        style: "outline",
-        value: "#f00 solid 2px",
-      },
-    };
 
-    setLocalStorage("para-width", object);
-    setParaWidth(object);
-  });
+  paraWidthElm &&
+    paraWidthElm.addEventListener("click", (event) => {
+      paraWidth = !paraWidth;
+      const object = {
+        access_name: "para-width",
+        access_index: 0,
+        isEnable: paraWidth,
+        index: 11,
+        property: {
+          style: "outline",
+          value: "#f00 solid 2px",
+        },
+      };
+
+      setLocalStorage("para-width", object);
+      setParaWidth(object);
+    });
 
   function setParaWidth(paraWidths) {
     paraWidth = paraWidths?.isEnable;
@@ -1707,13 +1705,13 @@ function onLoadWindow(config) {
   //       document.body.appendChild(div);
 
   //       let btn1 = document.createElement("img");
-  //       btn1.src = ${baseUrl}/assets/images/pause.svg;
+  //       btn1.src = ${baseUrl}assets/images/pause.svg;
   //       btn1.id = "cubetPause";
   //       btn1.width = "25";
   //       btn1.title = "Pause";
 
   //       let btn2 = document.createElement("img");
-  //       btn2.src = ${baseUrl}/assets/images/resume.svg;
+  //       btn2.src = ${baseUrl}assets/images/resume.svg;
   //       btn2.id = "cubetResume";
   //       btn2.width = "25";
   //       btn2.title = "Resume";
@@ -1904,7 +1902,7 @@ function onLoadWindow(config) {
     return ` <div class="col-4 my-2" >
   <a  class="box-type"  id="DarkContrast">
       <div class="icon">
-         <img id="cubet-image"src=${baseUrl}/assets/images/Dark-Contrast.svg alt="Dark Contrast">
+         <img id="cubet-image"src=${baseUrl}assets/images/Dark-Contrast.svg alt="Dark Contrast">
       </div>
       <p style="pointer-events: none;">Dark Contrast</p>
   </a>
@@ -1915,7 +1913,7 @@ function onLoadWindow(config) {
     return `<div class="col-4 my-2" >
   <a  class="box-type" id="HighContrast">
       <div class="icon">
-         <img id="cubet-image"src=${baseUrl}/assets/images/high-contrast.svg alt="High Contrast">
+         <img id="cubet-image"src=${baseUrl}assets/images/high-contrast.svg alt="High Contrast">
       </div>
       <p style="pointer-events: none;">High Contrast</p>
   </a>
@@ -1926,7 +1924,7 @@ function onLoadWindow(config) {
     return `<div class="col-4 my-2" >
   <a  class="box-type" id="LowContrast">
       <div class="icon">
-         <img id="cubet-image"src=${baseUrl}/assets/images/low-contrast.svg alt="Low Contrast">
+         <img id="cubet-image"src=${baseUrl}assets/images/low-contrast.svg alt="Low Contrast">
       </div>
       <p style="pointer-events: none;">Low Contrast</p>
   </a>
@@ -1937,7 +1935,7 @@ function onLoadWindow(config) {
     return ` <div class="col-4 my-2" >
 <a  class="box-type " id="HighSaturation">
     <div class="icon">
-       <img id="cubet-image"src=${baseUrl}/assets/images/Hight-saturation.svg alt="High Saturation">
+       <img id="cubet-image"src=${baseUrl}assets/images/Hight-saturation.svg alt="High Saturation">
     </div>
     <p style="pointer-events: none;">High Saturation </p>
 </a>
@@ -1968,7 +1966,7 @@ function onLoadWindow(config) {
     return `       <div class="col-4 my-2" >
   <a  class="box-type" id="LowSaturation">
       <div class="icon">
-         <img id="cubet-image"src=${baseUrl}/assets/images/Low-Saturation.svg alt="Low Saturation">
+         <img id="cubet-image"src=${baseUrl}assets/images/Low-Saturation.svg alt="Low Saturation">
       </div>
       <p>Low Saturation </p>
   </a>
@@ -2021,7 +2019,7 @@ function onLoadWindow(config) {
       return `  <div class="col-4 my-2" >
       <a  id="titleHighlights" class="box-type">
           <div class="icon">
-             <img id="cubet-image"src=${baseUrl}/assets/images/text-highlight.svg alt="Highlight Titles">
+             <img id="cubet-image"src=${baseUrl}assets/images/text-highlight.svg alt="Highlight Titles">
           </div>
           <p style="pointer-events: none;">Highlight Titles</p>
       </a>
@@ -2035,7 +2033,7 @@ function onLoadWindow(config) {
     return `<div class="col-4 my-2">
   <a  class="box-type" id="highlight-links">
       <div class="icon">
-         <img id="cubet-image"src=${baseUrl}/assets/images/link-highlight.svg alt="Highlight Links">
+         <img id="cubet-image"src=${baseUrl}assets/images/link-highlight.svg alt="Highlight Links">
       </div>
       <p style="pointer-events: none;">Highlight Links</p>
   </a>
@@ -2045,7 +2043,7 @@ function onLoadWindow(config) {
     return `<div class="col-4 my-2" >
   <a class="box-type" id="MonoChrome">
   <div class="icon">
-  <img id="cubet-image"src=${baseUrl}/assets/images/Monochrome.svg alt="Monochrome">
+  <img id="cubet-image"src=${baseUrl}assets/images/Monochrome.svg alt="Monochrome">
   </div>
   <p style="pointer-events: none;">Monochrome </p>
   </a>
@@ -2055,7 +2053,7 @@ function onLoadWindow(config) {
     return `    <div class="col-4 my-2">
   <a  class="box-type" id="readable-fonts">
       <div class="icon">
-         <img id="cubet-image"src=${baseUrl}/assets/images/readable-fonts.svg alt="Readable Fonts">
+         <img id="cubet-image"src=${baseUrl}assets/images/readable-fonts.svg alt="Readable Fonts">
       </div>
       <p>Readable Fonts</p>
   </a>
@@ -2078,7 +2076,7 @@ function onLoadWindow(config) {
     return ` <div class="col-4 my-2">
   <a id="align-left" class="box-type textAlign">
       <div class="icon">
-         <img id="cubet-image"src=${baseUrl}/assets/images/align-left.svg alt="Align Left ">
+         <img id="cubet-image"src=${baseUrl}assets/images/align-left.svg alt="Align Left ">
       </div>
       <p>Align Left </p>
   </a>
@@ -2099,7 +2097,7 @@ function onLoadWindow(config) {
     return `    <div class="col-4 my-2">
   <a  id="align-center" class="box-type textAlign">
       <div class="icon">
-         <img id="cubet-image"src=${baseUrl}/assets/images/align-center.svg alt="Align Center">
+         <img id="cubet-image"src=${baseUrl}assets/images/align-center.svg alt="Align Center">
       </div>
       <p>Align Center </p>
   </a>
@@ -2121,7 +2119,7 @@ function onLoadWindow(config) {
     return `<div class="col-4 my-2">
   <a  id="align-right" class="box-type textAlign">
       <div class="icon">
-         <img id="cubet-image"src=${baseUrl}/assets/images/align-right.svg alt="Align Right ">
+         <img id="cubet-image"src=${baseUrl}assets/images/align-right.svg alt="Align Right ">
       </div>
       <p>Align Right </p>
   </a>
@@ -2144,7 +2142,7 @@ function onLoadWindow(config) {
   <div class="col-4 my-2">
   <a id="big-black-cursor"  class="box-type big-cursor">
   <div class="icon">
-     <img id="cubet-image"src=${baseUrl}/assets/images/cursor-dark.svg alt="Big Black Cursor">
+     <img id="cubet-image"src=${baseUrl}assets/images/cursor-dark.svg alt="Big Black Cursor">
   </div>
   <p>Big Black Cursor</p>
 </a>
@@ -2155,7 +2153,7 @@ function onLoadWindow(config) {
     return `  <div class="col-4 my-2">
   <a id="big-white-cursor" class="box-type big-cursor">
       <div class="icon">
-         <img id="cubet-image"src=${baseUrl}/assets/images/cursor-white.svg alt="Big White Cursor">
+         <img id="cubet-image"src=${baseUrl}assets/images/cursor-white.svg alt="Big White Cursor">
       </div>
       <p>Big White Cursor</p>
   </a>
@@ -2166,7 +2164,7 @@ function onLoadWindow(config) {
     return `  <div class="col-4 my-2">
   <a id="read-mode" class="box-type">
       <div class="icon">
-         <img id="cubet-image"src=${baseUrl}/assets/images/readMode.svg alt="Reader Mode">
+         <img id="cubet-image"src=${baseUrl}assets/images/readMode.svg alt="Reader Mode">
       </div>
       <p>Reader Mode</p>
   </a>
@@ -2177,7 +2175,7 @@ function onLoadWindow(config) {
     return `  <div class="col-4 my-2">
   <a  class="box-type" id="hide-image">
       <div class="icon">
-         <img id="cubet-image"src=${baseUrl}/assets/images/no-image.svg alt="Hide Images">
+         <img id="cubet-image"src=${baseUrl}assets/images/no-image.svg alt="Hide Images">
       </div>
       <p>Hide Images</p>
   </a>
@@ -2188,7 +2186,7 @@ function onLoadWindow(config) {
     return `  <div class="col-4 my-2">
   <a  class="box-type" id="reading-guide">
       <div class="icon">
-         <img id="cubet-image"src=${baseUrl}/assets/images/reader-guid.svg alt="Reading Guide">
+         <img id="cubet-image"src=${baseUrl}assets/images/reader-guid.svg alt="Reading Guide">
       </div>
       <p>Reading Guide</p>
   </a>
@@ -2199,7 +2197,7 @@ function onLoadWindow(config) {
     return `  <div class="col-4 my-2">
   <a  class="box-type" id="image-desc">
       <div class="icon">
-         <img id="cubet-image"src=${baseUrl}/assets/images/altimage.svg alt="Image Description">
+         <img id="cubet-image"src=${baseUrl}assets/images/altimage.svg alt="Image Description">
       </div>
       <p>Image Description</p>
   </a>
@@ -2210,7 +2208,7 @@ function onLoadWindow(config) {
     return `  <div class="col-4 my-2">
   <a  class="box-type" id="reading-mask">
       <div class="icon">
-         <img id="cubet-image"src=${baseUrl}/assets/images/read.svg alt="Reading Mask">
+         <img id="cubet-image"src=${baseUrl}assets/images/read.svg alt="Reading Mask">
       </div>
       <p>Reading Mask</p>
   </a>
@@ -2233,7 +2231,7 @@ function onLoadWindow(config) {
     return `  <div class="col-4 my-2">
   <a  class="box-type" id="text-magnifier">
       <div class="icon">
-         <img id="cubet-image"src=${baseUrl}/assets/images/magnifier.svg alt="Text Magnifier">
+         <img id="cubet-image"src=${baseUrl}assets/images/magnifier.svg alt="Text Magnifier">
       </div>
       <p>Text Magnifier</p>
   </a>
@@ -2244,7 +2242,7 @@ function onLoadWindow(config) {
     return `  <div class="col-4 my-2">
   <a  class="box-type" id="highlight-para">
       <div class="icon">
-         <img id="cubet-image"src=${baseUrl}/assets/images/paragraphs.svg alt="Highlight Paragraphs">
+         <img id="cubet-image"src=${baseUrl}assets/images/paragraphs.svg alt="Highlight Paragraphs">
       </div>
       <p>Highlight Paragraphs</p>
   </a>
@@ -2255,7 +2253,7 @@ function onLoadWindow(config) {
     return `  <div class="col-4 my-2">
   <a  class="box-type" id="para-width">
       <div class="icon">
-         <img id="cubet-image"src=${baseUrl}/assets/images/parawidth.svg alt="Paragraph Width">
+         <img id="cubet-image"src=${baseUrl}assets/images/parawidth.svg alt="Paragraph Width">
       </div>
       <p>Paragraph Width</p>
   </a>
@@ -2278,7 +2276,7 @@ function onLoadWindow(config) {
   //     return `  <div class="col-4 my-2">
   //   <a  class="box-type" id="textToSpeak">
   //       <div class="icon">
-  //          <img id="cubet-image"src=${baseUrl}/assets/images/parawidth.svg alt="Highlight Paragraphs">
+  //          <img id="cubet-image"src=${baseUrl}assets/images/parawidth.svg alt="Highlight Paragraphs">
   //       </div>
   //       <p>Text To Speak</p>
   //   </a>
@@ -2335,16 +2333,15 @@ document.getElementById("cubetResume")?.addEventListener("click", function () {
 });
 function cubilityInit(params) {
   document
-  .getElementsByTagName("head")[0]
-  .insertAdjacentHTML(
-    "beforeend",
-    `<link type="text/css" rel="stylesheet" href=${baseUrl}/css/cubet-style.css />`
-  );
+    .getElementsByTagName("head")[0]
+    .insertAdjacentHTML(
+      "beforeend",
+      `<link type="text/css" rel="stylesheet" href=${baseUrl}css/cubet-style.css />`
+    );
   let config = {
     backgroundColor: params.color,
     position: params.position,
     image: params.image,
-
 
     getBackGroundColorHTML: params.backgroundColor,
     getFontColorHTML: params.fontColor,
@@ -2352,21 +2349,21 @@ function cubilityInit(params) {
     getTextMagnifierHTML: params.textMagnifier,
     getParaWidthHTML: params.paraGraphWidth,
     getReadableFontHTML: params.readableFont,
-    getHighLightsTitleHTML:params.highlightTitles,
-    getHightLightLinksHTML:params.highlightLinks,
-    getHighlightsParaHTML:params.highlightParagraphs,
-    getContentScaleHTML:params.contentScaling,
-    getLineHeightHTML:params.lineHeight,
-    getAdjustLetterSpacingHTML:params.letterSpacing,
-    getWordSpacingHTML:params.wordSpacing,
-    getFontSizeHTML:params.fontSize,
+    getHighLightsTitleHTML: params.highlightTitles,
+    getHightLightLinksHTML: params.highlightLinks,
+    getHighlightsParaHTML: params.highlightParagraphs,
+    getContentScaleHTML: params.contentScaling,
+    getLineHeightHTML: params.lineHeight,
+    getAdjustLetterSpacingHTML: params.letterSpacing,
+    getWordSpacingHTML: params.wordSpacing,
+    getFontSizeHTML: params.fontSize,
 
-    getReaderModeHTML:params.readerMode,
-    getHideImageHTML:params.hideImage,
-    getImageDescriptionHTML:params.imageDescription,
-    getReadingMaskHTML:params.readingMask,
-    getAutoScrollHTML:params.autoScroll,
-    getHReadingGuideHTML:params.readingGuideLine
+    getReaderModeHTML: params.readerMode,
+    getHideImageHTML: params.hideImage,
+    getImageDescriptionHTML: params.imageDescription,
+    getReadingMaskHTML: params.readingMask,
+    getAutoScrollHTML: params.autoScroll,
+    getHReadingGuideHTML: params.readingGuideLine,
   }; // set the properties of the customized web site
   if (params.hasOwnProperty("contrast")) {
     config.getDarkContrastHTML = params.contrast;
@@ -2388,5 +2385,4 @@ function cubilityInit(params) {
   setTimeout(() => {
     onLoadWindow(config);
   }, 1000);
-
 }
