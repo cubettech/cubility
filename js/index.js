@@ -1,4 +1,4 @@
-const baseUrl = "https://cubility.cubettech.com/";
+const baseUrl = "./";
 
 // path in for default will is save from the outside  src="./../js/index.js"
 
