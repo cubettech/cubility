@@ -98,13 +98,13 @@ function onLoadWindow(config) {
   let cursorPointer = {
     //button map
     blackCursor: {
-      pointerUrl: "https://acsbapp.com/apps/app/dist/media/pointer.svg",
-      cursorUrl: "https://acsbapp.com/apps/app/dist/media/cursor.svg",
+      pointerUrl: `${baseUrl}assets/images/pointer.svg`,
+      cursorUrl: `${baseUrl}assets/images/cursor.svg `,
     },
 
     whiteCursor: {
-      pointerUrl: "https://acsbapp.com/apps/app/dist/media/pointer2.svg",
-      cursorUrl: "https://acsbapp.com/apps/app/dist/media/cursor2.svg",
+      pointerUrl: `${baseUrl}assets/images/pointer2.svg`,
+      cursorUrl: `${baseUrl}assets/images/cursor2.svg`,
     },
   };
   var colorButtons = {
