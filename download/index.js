@@ -1,5 +1,5 @@
-// for github baseUrl
-const baseUrl = "./";
+//for production url
+const baseUrl = "https://cubility.cubettech.com/";
 
 // path in for default will is save from the outside  src="./../js/index.js"
 let colorAdjArr = [
